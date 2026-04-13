@@ -1,16 +1,62 @@
 % True/False Questions
 % 렉처노트 범위: L01-L07
-% 
-% TODO: 문제 작성 후 배점 확정
+% Socrative 자동채점 대응
 
-\question[\tba{XX}] For each of the following statements, indicate if
+\question[30] For each of the following statements, indicate if
 it is \textit{true} or \textit{false}. A correct answer will get 3
 points, but a wrong answer will get -3 points. No answer will get
 0 point.
 
 \begin{parts}
 
-% [여기에 T/F 문제 추가]
+% 출처: L01 (Perceptron, XOR)
+\part A single Perceptron with a hard thresholding activation function can represent the XOR gate.
+\answer{False. The XOR problem is not linearly separable. A multi-layer perceptron (MLP) is required to solve XOR.}
+\vspace{\stretch{1}}
+
+% 출처: L02 (KL Divergence, Cross Entropy)
+\part When the ground-truth probability distribution $P$ is a one-hot vector, minimizing the cross entropy $H(P, Q)$ is equivalent to minimizing the KL divergence $D_{KL}(P \| Q)$.
+\answer{True. $D_{KL}(P \| Q) = H(P,Q) - H(P)$. Since $P$ is a one-hot vector, $H(P) = 0$, so minimizing $H(P,Q)$ is the same as minimizing $D_{KL}(P \| Q)$.}
+\vspace{\stretch{1}}
+
+% 출처: L03 (Copy gate, gradient flow)
+\part In a computational graph, when a variable $x$ is used by two different downstream operations (i.e., the node branches), the gradient $\partial \mathcal{L} / \partial x$ is obtained by multiplying the gradients flowing back from both branches.
+\answer{False. The gradients from both branches are \textbf{added}, not multiplied. This follows from the multivariable chain rule: $\frac{d\mathcal{L}}{dx} = \frac{\partial \mathcal{L}}{\partial f}\frac{\partial f}{\partial x} + \frac{\partial \mathcal{L}}{\partial g}\frac{\partial g}{\partial x}$.}
+\vspace{\stretch{1}}
+
+% 출처: L04 (AdaGrad)
+\part In AdaGrad, the accumulated sum of squared gradients $v_t$ can decrease over time during training.
+\answer{False. $v_t = v_{t-1} + \nabla f(x_t) \odot \nabla f(x_t)$. Since a sum of non-negative terms is added at each step, $v_t$ monotonically increases. This is a known drawback of AdaGrad, which RMSProp addresses by using a moving average.}
+\vspace{\stretch{1}}
+
+% 출처: L05 (Sigmoid derivative)
+\part The maximum value of the sigmoid derivative $\sigma'(x) = \sigma(x)(1 - \sigma(x))$ is $0.5$.
+\answer{False. The maximum is $0.25$, achieved when $\sigma(x) = 0.5$ (i.e., $x = 0$): $0.5 \times (1 - 0.5) = 0.25$.}
+\vspace{\stretch{1}}
+
+% 출처: L05 (Dead ReLU)
+\part In a neural network using ReLU activation, if all training data produces negative pre-activation values at a certain neuron, that neuron can never be updated through gradient descent.
+\answer{True. When the pre-activation is negative for all data, ReLU outputs 0 and its gradient is 0. Therefore, the weights connected to this neuron receive zero gradient and cannot be updated. This is known as the ``Dead ReLU'' problem.}
+\vspace{\stretch{1}}
+
+% 출처: L06 (AUC-PR)
+\part The AUC-PR (Area Under the Precision-Recall Curve) treats the importance of positive and negative classes equally.
+\answer{False. AUC-PR emphasizes the proportion of true positives. It does not use true negatives (TN) in its computation, so it treats positives as more important than negatives. AUC-ROC is the metric that treats both classes equally.}
+\vspace{\stretch{1}}
+
+% 출처: L05 (Batch Normalization placement)
+\part Batch normalization is typically applied after the activation function (e.g., ReLU) in a neural network layer.
+\answer{False. Batch normalization is applied \textbf{before} the activation function. The standard order is: Fully Connected (or Conv) $\rightarrow$ Batch Normalization $\rightarrow$ Activation Function.}
+\vspace{\stretch{1}}
+
+% 출처: L07 (Receptive field, VGGNet)
+\part A single convolution layer with a $5 \times 5$ filter has the same receptive field size as two stacked convolution layers each with $3 \times 3$ filters (assuming stride = 1 for all layers).
+\answer{True. The first $3 \times 3$ layer has a receptive field of $3 \times 3$. The second $3 \times 3$ layer on top of it has a receptive field of $(3 + 3 - 1) \times (3 + 3 - 1) = 5 \times 5$, which is the same as a single $5 \times 5$ filter.}
+\vspace{\stretch{1}}
+
+% 출처: L07 (ResNet, Residual connection)
+\part In a residual block of ResNet, the network directly learns the target mapping $H(\mathbf{x})$ without any shortcut (skip) connections.
+\answer{False. A residual block learns the \textbf{residual mapping} $F(\mathbf{x}) = H(\mathbf{x}) - \mathbf{x}$, and the output is $F(\mathbf{x}) + \mathbf{x}$ via a shortcut connection. This design makes optimization of deep networks easier.}
+\vspace{\stretch{1}}
 
 \end{parts}
-\vspace{\stretch{1}}
