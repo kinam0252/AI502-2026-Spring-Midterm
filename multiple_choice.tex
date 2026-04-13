@@ -7,7 +7,7 @@
 \begin{parts}
 
 % 출처: L01 (MLP, XOR)
-\part[5] What is the minimum number of layers (counting hidden and output layers only) required for a neural network to solve the XOR problem?
+\part[3] What is the minimum number of layers (counting hidden and output layers only) required for a neural network to solve the XOR problem?
 
 \begin{oneparchoices}
  \choice 1
@@ -20,7 +20,7 @@
 \vspace{\stretch{1}}
 
 % 출처: L02 (Cross Entropy calculation)
-\part[7] A classifier outputs the softmax probability $[0.1,\; 0.2,\; 0.3,\; 0.4]$ for a 4-class classification problem. If the ground-truth class is class 3, what is the cross-entropy loss?
+\part[4] A classifier outputs the softmax probability $[0.1,\; 0.2,\; 0.3,\; 0.4]$ for a 4-class classification problem. If the ground-truth class is class 3, what is the cross-entropy loss?
 
 \begin{oneparchoices}
  \choice $-\log(0.1)$
@@ -33,7 +33,7 @@
 \vspace{\stretch{1}}
 
 % 출처: L03 (Softmax + CE gradient, 값 변형)
-\part[8] Given the softmax output $\mathbf{p} = [0.2,\; 0.5,\; 0.3]$ and the ground-truth class is class 2, what is the gradient of the cross-entropy loss with respect to the logit vector $\mathbf{s}$?
+\part[4] Given the softmax output $\mathbf{p} = [0.2,\; 0.5,\; 0.3]$ and the ground-truth class is class 2, what is the gradient of the cross-entropy loss with respect to the logit vector $\mathbf{s}$?
 
 \begin{oneparchoices}
  \choice $[0.2,\; -0.5,\; 0.3]$
@@ -46,7 +46,7 @@
 \vspace{\stretch{1}}
 
 % 출처: L03 (Max gate)
-\part[5] In a computational graph, a max gate routes the upstream gradient to \rule{1cm}{0.15mm}.
+\part[3] In a computational graph, a max gate routes the upstream gradient to \rule{1cm}{0.15mm}.
 
 \begin{oneparchoices}
  \choice both inputs equally
@@ -59,7 +59,7 @@
 \vspace{\stretch{1}}
 
 % 출처: L04 (Optimizer identification)
-\part[7] Which optimizer uses an \textbf{exponential moving average of squared gradients} to adapt the learning rate for each parameter?
+\part[4] Which optimizer uses an \textbf{exponential moving average of squared gradients} to adapt the learning rate for each parameter?
 
 \begin{oneparchoices}
  \choice SGD with Momentum
@@ -72,7 +72,7 @@
 \vspace{\stretch{1}}
 
 % 출처: L04 (Mini-batch SGD)
-\part[5] What is the main advantage of using mini-batch SGD over full-batch gradient descent?
+\part[3] What is the main advantage of using mini-batch SGD over full-batch gradient descent?
 
 \begin{oneparchoices}
  \choice It always converges to the global minimum. \\
@@ -85,7 +85,7 @@
 \vspace{\stretch{1}}
 
 % 출처: L05 (Dead neuron)
-\part[7] Which activation function can suffer from the ``dead neuron'' problem?
+\part[3] Which activation function can suffer from the ``dead neuron'' problem?
 
 \begin{oneparchoices}
  \choice Sigmoid
@@ -98,7 +98,7 @@
 \vspace{\stretch{1}}
 
 % 출처: L06 (F1 score calculation)
-\part[8] A binary classifier produces the following results: $\text{TP} = 40$, $\text{FP} = 10$, $\text{FN} = 10$, $\text{TN} = 40$. What is the F1 score?
+\part[4] A binary classifier produces the following results: $\text{TP} = 40$, $\text{FP} = 10$, $\text{FN} = 10$, $\text{TN} = 40$. What is the F1 score?
 
 \begin{oneparchoices}
  \choice 0.75
@@ -111,7 +111,7 @@
 \vspace{\stretch{1}}
 
 % 출처: L07 (Convolution output size)
-\part[8] Given an input of size $32 \times 32 \times 3$, what is the output size after a convolution layer with 16 filters of size $5 \times 5$, stride 1, and padding 0?
+\part[4] Given an input of size $32 \times 32 \times 3$, what is the output size after a convolution layer with 16 filters of size $5 \times 5$, stride 1, and padding 0?
 
 \begin{oneparchoices}
  \choice $28 \times 28 \times 3$
@@ -124,7 +124,7 @@
 \vspace{\stretch{1}}
 
 % 출처: L07 (Same padding)
-\part[10] What padding size is required for a $3 \times 3$ filter to produce an output with the same spatial dimensions as the input? (stride = 1)
+\part[4] What padding size is required for a $3 \times 3$ filter to produce an output with the same spatial dimensions as the input? (stride = 1)
 
 \begin{oneparchoices}
  \choice 0
@@ -134,6 +134,136 @@
 \end{oneparchoices}
 
 \answer{B. Same padding: $p = (k-1)/2 = (3-1)/2 = 1$.}
+\vspace{\stretch{1}}
+
+% 출처: L01 (Forward propagation)
+\part[3] In a feedforward neural network, the forward propagation computes the output by \rule{1cm}{0.15mm}.
+
+\begin{oneparchoices}
+ \choice propagating signals from the output layer to the input layer \\
+ \choice propagating signals from the input layer to the output layer \\
+ \choice updating the weights using the chain rule \\
+ \choice computing the gradient of the loss function \\
+\end{oneparchoices}
+
+\answer{B. Forward propagation computes the output by passing signals layer-by-layer from the input to the output.}
+\vspace{\stretch{1}}
+
+% 출처: L02 (Softmax)
+\part[3] Given logits $[2.0,\; 1.0,\; 0.1]$, which class will have the \textbf{highest} softmax probability?
+
+\begin{oneparchoices}
+ \choice Class 1
+ \choice Class 2
+ \choice Class 3
+ \choice All classes have equal probability
+\end{oneparchoices}
+
+\answer{A. Softmax is a monotonic function—the largest logit always receives the highest probability.}
+\vspace{\stretch{1}}
+
+% 출처: L03 (Add gate)
+\part[3] An add gate in a computational graph works as a gradient \rule{1cm}{0.15mm}.
+
+\begin{oneparchoices}
+ \choice distributor
+ \choice switcher
+ \choice amplifier
+ \choice None of the above
+\end{oneparchoices}
+
+\answer{A. An add gate distributes the upstream gradient equally to both inputs ($\partial(x+y)/\partial x = 1$).}
+\vspace{\stretch{1}}
+
+% 출처: L04 (Adam)
+\part[4] Which of the following is \textbf{NOT} true about the Adam optimizer?
+
+\begin{oneparchoices}
+ \choice It uses a moving average to estimate the first moment (mean) of gradients. \\
+ \choice It combines AdaGrad and Momentum. \\
+ \choice It applies bias correction to the moment estimates. \\
+ \choice None of the above. \\
+\end{oneparchoices}
+
+\answer{B. Adam combines \textbf{RMSProp} (not AdaGrad) and Momentum, with bias correction.}
+\vspace{\stretch{1}}
+
+% 출처: L05 (Dropout)
+\part[3] During test time, a neural network with inverted dropout \rule{1cm}{0.15mm}.
+
+\begin{oneparchoices}
+ \choice randomly drops neurons as in training \\
+ \choice uses all neurons without any modification \\
+ \choice scales the weights by the dropout rate \\
+ \choice removes the dropout layers entirely from the network \\
+\end{oneparchoices}
+
+\answer{B. With inverted dropout, weights are already scaled during training ($/ p$), so at test time all neurons are used without modification.}
+\vspace{\stretch{1}}
+
+% 출처: L05 (Sigmoid)
+\part[3] The output range of the sigmoid function $\sigma(x) = \frac{1}{1+e^{-x}}$ is:
+
+\begin{oneparchoices}
+ \choice $[-1, 1]$
+ \choice $[0, 1]$
+ \choice $(-\infty, \infty)$
+ \choice $[0, \infty)$
+\end{oneparchoices}
+
+\answer{B. The sigmoid function outputs values strictly between 0 and 1: $(0, 1)$.}
+\vspace{\stretch{1}}
+
+% 출처: L06 (Precision / Recall)
+\part[3] Precision is defined as:
+
+\begin{oneparchoices}
+ \choice $\frac{\text{TP}}{\text{TP} + \text{FN}}$
+ \choice $\frac{\text{TP}}{\text{TP} + \text{FP}}$
+ \choice $\frac{\text{TP} + \text{TN}}{\text{Total}}$
+ \choice $\frac{\text{TP}}{\text{Total}}$
+\end{oneparchoices}
+
+\answer{B. Precision = TP / (TP + FP). Option A is the definition of Recall.}
+\vspace{\stretch{1}}
+
+% 출처: L06 (Micro vs Macro averaging)
+\part[4] In multi-class evaluation, micro-averaging computes the metric by:
+
+\begin{oneparchoices}
+ \choice computing the metric for each class, then averaging \\
+ \choice aggregating all TP, FP, FN globally, then computing the metric \\
+ \choice weighting each class by its frequency \\
+ \choice using only the majority class \\
+\end{oneparchoices}
+
+\answer{B. Micro-averaging aggregates all TP, FP, FN across classes before computing the metric. Option A describes macro-averaging.}
+\vspace{\stretch{1}}
+
+% 출처: L07 (Receptive field)
+\part[4] What is the receptive field size of three stacked $3 \times 3$ convolution layers? (stride = 1 for all layers)
+
+\begin{oneparchoices}
+ \choice $5 \times 5$
+ \choice $7 \times 7$
+ \choice $9 \times 9$
+ \choice $11 \times 11$
+\end{oneparchoices}
+
+\answer{B. Each additional $3 \times 3$ layer adds 2 to the receptive field: $3 \rightarrow 5 \rightarrow 7$. (Formula: $(n-1) \times k + 1$ where $n$ = layers, but simpler: $3 + 2 + 2 = 7$).}
+\vspace{\stretch{1}}
+
+% 출처: L07 (VGGNet)
+\part[4] What is the main advantage of using three stacked $3 \times 3$ conv layers instead of a single $7 \times 7$ conv layer (with the same number of channels $C$)?
+
+\begin{oneparchoices}
+ \choice Larger receptive field \\
+ \choice Fewer parameters and more non-linearity \\
+ \choice No padding is required \\
+ \choice Faster inference speed \\
+\end{oneparchoices}
+
+\answer{B. Three $3 \times 3$ layers use $3 \times (9C^2) = 27C^2$ parameters vs.\ $49C^2$ for one $7 \times 7$ layer, and introduce 3 ReLU activations instead of 1.}
 \vspace{\stretch{1}}
 
 \end{parts}
