@@ -1,22 +1,22 @@
 % Multiple Choice Questions
 % 렉처노트 범위: L01-L07
-% Socrative 자동채점 대응
+% Socrative 자동채점 대응 — 샘플 시험 스타일 (빈칸, 간단 계산, NOT true)
 
 \question[70] For each of the following statements, select the most proper answer of each question.
 
 \begin{parts}
 
-% 출처: L01 (Neural Network layer counting)
-\part[5] A neural network has an input layer, two hidden layers, and an output layer. According to the convention used in the lecture, how many layers does this network have?
+% 출처: L01 (MLP, XOR)
+\part[5] What is the minimum number of layers (counting hidden and output layers only) required for a neural network to solve the XOR problem?
 
 \begin{oneparchoices}
+ \choice 1
  \choice 2
  \choice 3
  \choice 4
- \choice 5
 \end{oneparchoices}
 
-\answer{B. A network is counted by its hidden + output layers (i.e., layers with trainable weights). 2 hidden + 1 output = 3-layer network. The input layer is not counted.}
+\answer{B. XOR requires at least 1 hidden layer + 1 output layer = 2 layers.}
 \vspace{\stretch{1}}
 
 % 출처: L02 (Cross Entropy calculation)
@@ -29,7 +29,7 @@
  \choice $-\sum_{c=1}^{4} \log(p_c)$
 \end{oneparchoices}
 
-\answer{B. With a one-hot ground truth, the cross-entropy loss reduces to $-\log(\hat{p}_{y_i})$, where $y_i$ is the ground-truth class. Since the ground truth is class 3 with $\hat{p}_3 = 0.3$, the loss is $-\log(0.3)$.}
+\answer{B. With one-hot ground truth, CE loss $= -\log(\hat{p}_{y_i})$. Since class 3 has $\hat{p}_3 = 0.3$, the loss is $-\log(0.3)$.}
 \vspace{\stretch{1}}
 
 % 출처: L03 (Softmax + CE gradient, 값 변형)
@@ -45,60 +45,60 @@
 \answer{A. $\partial \mathcal{L} / \partial \mathbf{s} = \mathbf{p} - \mathbf{y} = [0.2,\; 0.5,\; 0.3] - [0,\; 1,\; 0] = [0.2,\; -0.5,\; 0.3]$.}
 \vspace{\stretch{1}}
 
-% 출처: L03 (Linear layer backprop)
-\part[7] In backpropagation through a linear layer $\mathbf{y} = W\mathbf{x}$, the gradient of the loss $\mathcal{L}$ with respect to $\mathbf{x}$ is:
+% 출처: L03 (Max gate)
+\part[5] In a computational graph, a max gate routes the upstream gradient to \rule{1cm}{0.15mm}.
 
 \begin{oneparchoices}
- \choice $\frac{\partial \mathcal{L}}{\partial \mathbf{y}} \cdot W$
- \choice $W^\top \frac{\partial \mathcal{L}}{\partial \mathbf{y}}$
- \choice $\frac{\partial \mathcal{L}}{\partial \mathbf{y}} \cdot \mathbf{x}^\top$
- \choice $\mathbf{x} \cdot \frac{\partial \mathcal{L}}{\partial \mathbf{y}}^\top$
+ \choice both inputs equally
+ \choice the larger input only
+ \choice the smaller input only
+ \choice neither input
 \end{oneparchoices}
 
-\answer{B. $\frac{d\mathcal{L}}{d\mathbf{x}} = W^\top \frac{d\mathcal{L}}{d\mathbf{y}}$. Note: the gradient w.r.t.\ $W$ is $\frac{d\mathcal{L}}{dW} = \frac{d\mathcal{L}}{d\mathbf{y}} \mathbf{x}^\top$ (option C).}
+\answer{B. The max gate passes the gradient only to the input that was selected (the larger one) and assigns zero gradient to the other input.}
 \vspace{\stretch{1}}
 
-% 출처: L04 (Adam optimizer)
-\part[7] Which of the following statements about the Adam optimizer is correct?
+% 출처: L04 (Optimizer identification)
+\part[7] Which optimizer uses an \textbf{exponential moving average of squared gradients} to adapt the learning rate for each parameter?
 
 \begin{oneparchoices}
- \choice Adam combines AdaGrad and Momentum. \\
- \choice Adam applies bias correction to compensate for the initial bias of moving averages. \\
- \choice Adam's second moment estimate $v_t$ uses a simple cumulative sum of squared gradients. \\
- \choice The hyperparameters $\beta_1$ and $\beta_2$ in Adam are typically set to 0.99 and 0.9, respectively. \\
+ \choice SGD with Momentum
+ \choice AdaGrad
+ \choice RMSProp
+ \choice Nesterov Momentum
 \end{oneparchoices}
 
-\answer{B. Adam = RMSProp + Momentum + bias correction. (A) is wrong because Adam combines \textbf{RMSProp} (not AdaGrad) and Momentum. (C) describes AdaGrad, not Adam (which uses a moving average). (D) is reversed; typically $\beta_1 = 0.9$, $\beta_2 = 0.999$.}
+\answer{C. RMSProp uses $v_t = \rho \, v_{t-1} + (1-\rho) \, g_t^2$ (exponential moving average). AdaGrad uses a cumulative sum, not a moving average. Momentum and Nesterov do not adapt per-parameter learning rates.}
 \vspace{\stretch{1}}
 
-% 출처: L04 (Momentum)
-\part[7] Which of the following is an advantage of using momentum in gradient descent?
+% 출처: L04 (Mini-batch SGD)
+\part[5] What is the main advantage of using mini-batch SGD over full-batch gradient descent?
 
 \begin{oneparchoices}
+ \choice It always converges to the global minimum. \\
+ \choice It requires less memory and allows more frequent parameter updates. \\
+ \choice It computes the exact gradient of the full dataset. \\
  \choice It eliminates the need for a learning rate. \\
- \choice It guarantees convergence to the global minimum. \\
- \choice It helps overcome local minima by accumulating velocity from past gradients. \\
- \choice It automatically adjusts the learning rate for each parameter independently. \\
 \end{oneparchoices}
 
-\answer{C. Momentum accumulates past gradients as velocity, which helps the optimizer pass through local minima and saddle points. (A) is wrong—learning rate is still needed. (B) is wrong—no such guarantee. (D) describes adaptive methods like AdaGrad/RMSProp.}
+\answer{B. Mini-batch SGD processes a subset of data at a time, requiring less memory and enabling more frequent updates per epoch.}
 \vspace{\stretch{1}}
 
-% 출처: L05 (Dead ReLU)
-\part[7] Which of the following activation functions can suffer from the ``dead neuron'' problem, where a neuron permanently outputs zero for all inputs and its weights can never be updated?
+% 출처: L05 (Dead neuron)
+\part[7] Which activation function can suffer from the ``dead neuron'' problem?
 
 \begin{oneparchoices}
  \choice Sigmoid
  \choice Tanh
  \choice ReLU
- \choice All of the above
+ \choice Softmax
 \end{oneparchoices}
 
-\answer{C. ReLU outputs 0 for all negative inputs, and its gradient is 0 in that region. If all data produces negative pre-activation values, the neuron is permanently ``dead.'' Sigmoid and Tanh can have vanishing gradients but never exactly zero gradient (they saturate but do not produce zero gradient).}
+\answer{C. ReLU outputs 0 for all negative inputs and its gradient is 0 in that region, so a neuron can become permanently dead. Sigmoid and Tanh have vanishing but never exactly zero gradients.}
 \vspace{\stretch{1}}
 
 % 출처: L06 (F1 score calculation)
-\part[7] A binary classifier produces the following results: $\text{TP} = 40$, $\text{FP} = 10$, $\text{FN} = 10$, $\text{TN} = 40$. What is the F1 score?
+\part[8] A binary classifier produces the following results: $\text{TP} = 40$, $\text{FP} = 10$, $\text{FN} = 10$, $\text{TN} = 40$. What is the F1 score?
 
 \begin{oneparchoices}
  \choice 0.75
@@ -107,11 +107,11 @@
  \choice 0.90
 \end{oneparchoices}
 
-\answer{B. Precision $= \frac{40}{40+10} = 0.8$, Recall $= \frac{40}{40+10} = 0.8$, $F_1 = \frac{2 \times 0.8 \times 0.8}{0.8 + 0.8} = 0.8$.}
+\answer{B. Precision $= 40/50 = 0.8$, Recall $= 40/50 = 0.8$, $F_1 = 2 \times 0.8 \times 0.8 / (0.8 + 0.8) = 0.80$.}
 \vspace{\stretch{1}}
 
 % 출처: L07 (Convolution output size)
-\part[7] Given an input activation map of size $32 \times 32 \times 3$, what is the output size after passing through a convolution layer with 16 filters of size $5 \times 5$, stride 1, and padding 0?
+\part[8] Given an input of size $32 \times 32 \times 3$, what is the output size after a convolution layer with 16 filters of size $5 \times 5$, stride 1, and padding 0?
 
 \begin{oneparchoices}
  \choice $28 \times 28 \times 3$
@@ -120,20 +120,20 @@
  \choice $28 \times 28 \times 5$
 \end{oneparchoices}
 
-\answer{B. Output spatial size: $(32 + 2 \times 0 - 5 + 1) = 28$. Output depth = number of filters = 16. So the output is $28 \times 28 \times 16$.}
+\answer{B. Output spatial size $= (32 - 5)/1 + 1 = 28$. Output depth $=$ number of filters $= 16$. So $28 \times 28 \times 16$.}
 \vspace{\stretch{1}}
 
-% 출처: L07 (Conv layer parameters)
-\part[8] How many trainable parameters (including bias) does a single convolution layer have if it uses 10 filters of size $3 \times 3$ applied to an input with 3 channels?
+% 출처: L07 (Same padding)
+\part[10] What padding size is required for a $3 \times 3$ filter to produce an output with the same spatial dimensions as the input? (stride = 1)
 
 \begin{oneparchoices}
- \choice 90
- \choice 100
- \choice 270
- \choice 280
+ \choice 0
+ \choice 1
+ \choice 2
+ \choice 3
 \end{oneparchoices}
 
-\answer{D. Each filter has $3 \times 3 \times 3 = 27$ weights. With 10 filters: $27 \times 10 = 270$ weights $+ 10$ biases $= 280$ total parameters.}
+\answer{B. Same padding: $p = (k-1)/2 = (3-1)/2 = 1$.}
 \vspace{\stretch{1}}
 
 \end{parts}
