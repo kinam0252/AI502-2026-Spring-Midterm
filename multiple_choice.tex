@@ -6,7 +6,7 @@
 
 \begin{parts}
 
-% 출처: L01 (MLP, XOR)
+% 출처: L01 (MLP, XOR) — p32-34, p36
 \part[3] What is the minimum number of layers (counting hidden and output layers only) required for a neural network to solve the XOR problem?
 
 \begin{oneparchoices}
@@ -19,7 +19,7 @@
 \answer{B. XOR requires at least 1 hidden layer + 1 output layer = 2 layers.}
 \vspace{\stretch{1}}
 
-% 출처: L02 (Cross Entropy calculation)
+% 출처: L02 (Cross Entropy calculation) — p8-9
 \part[4] A classifier outputs the softmax probability $[0.1,\; 0.2,\; 0.3,\; 0.4]$ for a 4-class classification problem. If the ground-truth class is class 3, what is the cross-entropy loss?
 
 \begin{oneparchoices}
@@ -32,7 +32,7 @@
 \answer{B. With one-hot ground truth, CE loss $= -\log(\hat{p}_{y_i})$. Since class 3 has $\hat{p}_3 = 0.3$, the loss is $-\log(0.3)$.}
 \vspace{\stretch{1}}
 
-% 출처: L03 (Softmax + CE gradient, 값 변형)
+% 출처: L03 (Softmax + CE gradient) — p72-73
 \part[4] Given the softmax output $\mathbf{p} = [0.2,\; 0.5,\; 0.3]$ and the ground-truth class is class 2, what is the gradient of the cross-entropy loss with respect to the logit vector $\mathbf{s}$?
 
 \begin{oneparchoices}
@@ -45,7 +45,7 @@
 \answer{A. $\partial \mathcal{L} / \partial \mathbf{s} = \mathbf{p} - \mathbf{y} = [0.2,\; 0.5,\; 0.3] - [0,\; 1,\; 0] = [0.2,\; -0.5,\; 0.3]$.}
 \vspace{\stretch{1}}
 
-% 출처: L03 (Max gate)
+% 출처: L03 (Max gate) — p28
 \part[3] In a computational graph, a max gate routes the upstream gradient to \rule{1cm}{0.15mm}.
 
 \begin{oneparchoices}
@@ -58,7 +58,7 @@
 \answer{B. The max gate passes the gradient only to the input that was selected (the larger one) and assigns zero gradient to the other input.}
 \vspace{\stretch{1}}
 
-% 출처: L04 (Optimizer identification)
+% 출처: L04 (Optimizer identification) — p23-24
 \part[4] Which optimizer uses an \textbf{exponential moving average of squared gradients} to adapt the learning rate for each parameter?
 
 \begin{oneparchoices}
@@ -71,20 +71,20 @@
 \answer{C. RMSProp uses $v_t = \rho \, v_{t-1} + (1-\rho) \, g_t^2$ (exponential moving average). AdaGrad uses a cumulative sum, not a moving average. Momentum and Nesterov do not adapt per-parameter learning rates.}
 \vspace{\stretch{1}}
 
-% 출처: L04 (Mini-batch SGD)
+% 출처: L04 (Mini-batch SGD) — p4-5
 \part[3] What is the main advantage of using mini-batch SGD over full-batch gradient descent?
 
 \begin{oneparchoices}
  \choice It always converges to the global minimum. \\
- \choice It requires less memory and allows more frequent parameter updates. \\
+ \choice It is computationally faster per update by approximating the gradient. \\
  \choice It computes the exact gradient of the full dataset. \\
  \choice It eliminates the need for a learning rate. \\
 \end{oneparchoices}
 
-\answer{B. Mini-batch SGD processes a subset of data at a time, requiring less memory and enabling more frequent updates per epoch.}
+\answer{B. Mini-batch SGD approximates the gradient using a subset, making each update much faster than computing the gradient over the entire dataset.}
 \vspace{\stretch{1}}
 
-% 출처: L05 (Dead neuron)
+% 출처: L05 (Dead neuron) — p2, p9
 \part[3] Which activation function can suffer from the ``dead neuron'' problem?
 
 \begin{oneparchoices}
@@ -97,7 +97,7 @@
 \answer{C. ReLU outputs 0 for all negative inputs and its gradient is 0 in that region, so a neuron can become permanently dead. Sigmoid and Tanh have vanishing but never exactly zero gradients.}
 \vspace{\stretch{1}}
 
-% 출처: L06 (F1 score calculation)
+% 출처: L06 (F1 score calculation) — p4-5, p12
 \part[4] A binary classifier produces the following results: $\text{TP} = 40$, $\text{FP} = 10$, $\text{FN} = 10$, $\text{TN} = 40$. What is the F1 score?
 
 \begin{oneparchoices}
@@ -110,7 +110,7 @@
 \answer{B. Precision $= 40/50 = 0.8$, Recall $= 40/50 = 0.8$, $F_1 = 2 \times 0.8 \times 0.8 / (0.8 + 0.8) = 0.80$.}
 \vspace{\stretch{1}}
 
-% 출처: L07 (Convolution output size)
+% 출처: L07 (Convolution output size) — p54-55
 \part[4] Given an input of size $32 \times 32 \times 3$, what is the output size after a convolution layer with 16 filters of size $5 \times 5$, stride 1, and padding 0?
 
 \begin{oneparchoices}
@@ -123,7 +123,7 @@
 \answer{B. Output spatial size $= (32 - 5)/1 + 1 = 28$. Output depth $=$ number of filters $= 16$. So $28 \times 28 \times 16$.}
 \vspace{\stretch{1}}
 
-% 출처: L07 (Same padding)
+% 출처: L07 (Same padding) — p55
 \part[4] What padding size is required for a $3 \times 3$ filter to produce an output with the same spatial dimensions as the input? (stride = 1)
 
 \begin{oneparchoices}
@@ -136,7 +136,7 @@
 \answer{B. Same padding: $p = (k-1)/2 = (3-1)/2 = 1$.}
 \vspace{\stretch{1}}
 
-% 출처: L01 (Forward propagation)
+% 출처: L01 (Forward propagation) — p39-44, p46
 \part[3] In a feedforward neural network, the forward propagation computes the output by \rule{1cm}{0.15mm}.
 
 \begin{oneparchoices}
@@ -149,7 +149,7 @@
 \answer{B. Forward propagation computes the output by passing signals layer-by-layer from the input to the output.}
 \vspace{\stretch{1}}
 
-% 출처: L02 (Softmax)
+% 출처: L02 (Softmax) — p6
 \part[3] Given logits $[2.0,\; 1.0,\; 0.1]$, which class will have the \textbf{highest} softmax probability?
 
 \begin{oneparchoices}
@@ -162,7 +162,7 @@
 \answer{A. Softmax is a monotonic function—the largest logit always receives the highest probability.}
 \vspace{\stretch{1}}
 
-% 출처: L03 (Add gate)
+% 출처: L03 (Add gate) — p28
 \part[3] An add gate in a computational graph works as a gradient \rule{1cm}{0.15mm}.
 
 \begin{oneparchoices}
@@ -175,7 +175,7 @@
 \answer{A. An add gate distributes the upstream gradient equally to both inputs ($\partial(x+y)/\partial x = 1$).}
 \vspace{\stretch{1}}
 
-% 출처: L04 (Adam)
+% 출처: L04 (Adam) — p25, p28-29
 \part[4] Which of the following is \textbf{NOT} true about the Adam optimizer?
 
 \begin{oneparchoices}
@@ -188,7 +188,7 @@
 \answer{B. Adam combines \textbf{RMSProp} (not AdaGrad) and Momentum, with bias correction.}
 \vspace{\stretch{1}}
 
-% 출처: L05 (Dropout)
+% 출처: L05 (Dropout) — p25-26
 \part[3] During test time, a neural network with inverted dropout \rule{1cm}{0.15mm}.
 
 \begin{oneparchoices}
@@ -201,7 +201,7 @@
 \answer{B. With inverted dropout, weights are already scaled during training ($/ p$), so at test time all neurons are used without modification.}
 \vspace{\stretch{1}}
 
-% 출처: L05 (Sigmoid)
+% 출처: L05 (Sigmoid) — p3
 \part[3] The output range of the sigmoid function $\sigma(x) = \frac{1}{1+e^{-x}}$ is:
 
 \begin{oneparchoices}
@@ -214,7 +214,7 @@
 \answer{B. The sigmoid function outputs values strictly between 0 and 1: $(0, 1)$.}
 \vspace{\stretch{1}}
 
-% 출처: L06 (Precision / Recall)
+% 출처: L06 (Precision / Recall) — p4-5
 \part[3] Precision is defined as:
 
 \begin{oneparchoices}
@@ -227,7 +227,7 @@
 \answer{B. Precision = TP / (TP + FP). Option A is the definition of Recall.}
 \vspace{\stretch{1}}
 
-% 출처: L06 (Micro vs Macro averaging)
+% 출처: L06 (Micro vs Macro averaging) — p42, p44
 \part[4] In multi-class evaluation, micro-averaging computes the metric by:
 
 \begin{oneparchoices}
@@ -240,7 +240,7 @@
 \answer{B. Micro-averaging aggregates all TP, FP, FN across classes before computing the metric. Option A describes macro-averaging.}
 \vspace{\stretch{1}}
 
-% 출처: L07 (Receptive field)
+% 출처: L07 (Receptive field) — p85-86
 \part[4] What is the receptive field size of three stacked $3 \times 3$ convolution layers? (stride = 1 for all layers)
 
 \begin{oneparchoices}
@@ -253,7 +253,7 @@
 \answer{B. Each additional $3 \times 3$ layer adds 2 to the receptive field: $3 \rightarrow 5 \rightarrow 7$. (Formula: $(n-1) \times k + 1$ where $n$ = layers, but simpler: $3 + 2 + 2 = 7$).}
 \vspace{\stretch{1}}
 
-% 출처: L07 (VGGNet)
+% 출처: L07 (VGGNet) — p85, p87-88
 \part[4] What is the main advantage of using three stacked $3 \times 3$ conv layers instead of a single $7 \times 7$ conv layer (with the same number of channels $C$)?
 
 \begin{oneparchoices}
