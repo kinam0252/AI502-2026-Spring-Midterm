@@ -11,52 +11,52 @@ points, but a wrong answer will get -3 points. No answer will get
 
 % 출처: L01 (Perceptron, XOR) — p31-32, p38
 \part A single-layer perceptron can represent the XOR function.
-\answer{False. XOR is not linearly separable. A multi-layer perceptron is required.}
+\answer{False. XOR is not linearly separable. A multi-layer perceptron is required. \textit{(L01 p31--32, p38)}}
 \vspace{\stretch{1}}
 
 % 출처: L02 (Softmax) — p5-6
 \part The output values of the softmax function always sum to 1.
-\answer{True.}
+\answer{True. \textit{(L02 p5--6)}}
 \vspace{\stretch{1}}
 
 % 출처: L03 (Multiply gate, gradient flow) — p28, p45-46
 \part In a computational graph, a multiply gate distributes the upstream gradient equally to both of its inputs.
-\answer{False. A multiply gate swaps and scales: $\partial(xy)/\partial x = y$ and $\partial(xy)/\partial y = x$.}
+\answer{False. A multiply gate swaps and scales: $\partial(xy)/\partial x = y$ and $\partial(xy)/\partial y = x$. \textit{(L03 p28, p45--46)}}
 \vspace{\stretch{1}}
 
 % 출처: L04 (AdaGrad) — p21-23
 \part In AdaGrad, the effective learning rate can only decrease during training.
-\answer{True. The accumulated sum of squared gradients $v_t$ monotonically increases, so the effective learning rate $\eta / \sqrt{v_t}$ can only decrease.}
+\answer{True. The accumulated sum of squared gradients $v_t$ monotonically increases, so the effective learning rate $\eta / \sqrt{v_t}$ can only decrease. \textit{(L04 p21--23)}}
 \vspace{\stretch{1}}
 
 % 출처: L05 (Tanh) — p5
 \part The output range of the tanh activation function is $[0, 1]$.
-\answer{False. The output range of tanh is $[-1, 1]$.}
+\answer{False. The output range of tanh is $[-1, 1]$. \textit{(L05 p5)}}
 \vspace{\stretch{1}}
 
 % 출처: L05 (ReLU) — p6
 \part The ReLU activation function outputs 0 for all negative input values.
-\answer{True. $\text{ReLU}(x) = \max(0, x)$, which outputs 0 when $x < 0$.}
+\answer{True. $\text{ReLU}(x) = \max(0, x)$, which outputs 0 when $x < 0$. \textit{(L05 p6)}}
 \vspace{\stretch{1}}
 
 % 출처: L05 (Batch Normalization) — p16-17
 \part Batch normalization includes learnable parameters $\gamma$ (scale) and $\beta$ (shift).
-\answer{True. After normalizing, BN applies an affine transformation $y = \gamma \hat{x} + \beta$ with learnable $\gamma$ and $\beta$.}
+\answer{True. After normalizing, BN applies an affine transformation $y = \gamma \hat{x} + \beta$ with learnable $\gamma$ and $\beta$. \textit{(L05 p16--17)}}
 \vspace{\stretch{1}}
 
 % 출처: L06 (F1 score) — p12
 \part The F1 score is the arithmetic mean of precision and recall.
-\answer{False. The F1 score is the \textbf{harmonic} mean of precision and recall: $F_1 = \frac{2 \cdot P \cdot R}{P + R}$.}
+\answer{False. The F1 score is the \textbf{harmonic} mean of precision and recall: $F_1 = \frac{2 \cdot P \cdot R}{P + R}$. \textit{(L06 p12)}}
 \vspace{\stretch{1}}
 
 % 출처: L07 (Convolution, weight sharing) — p32-35
 \part In a standard convolution layer, each filter operates on only a single input channel.
-\answer{False. Each filter spans \textbf{all} input channels. A filter applied to an input with $C$ channels has size $k \times k \times C$.}
+\answer{False. Each filter spans \textbf{all} input channels. A filter applied to an input with $C$ channels has size $k \times k \times C$. \textit{(L07 p32--35)}}
 \vspace{\stretch{1}}
 
 % 출처: L07 (ResNet) — p99
 \part In ResNet, a skip (shortcut) connection adds the input of a residual block directly to its output.
-\answer{True. The output is $F(\mathbf{x}) + \mathbf{x}$, where $F(\mathbf{x})$ is the residual mapping learned by the block.}
+\answer{True. The output is $F(\mathbf{x}) + \mathbf{x}$, where $F(\mathbf{x})$ is the residual mapping learned by the block. \textit{(L07 p99)}}
 \vspace{\stretch{1}}
 
 \end{parts}
