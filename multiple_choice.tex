@@ -214,56 +214,56 @@
 \answer{B. $H(P,Q) = D_{KL}(P \| Q) + H(P)$. Since $P$ is the fixed ground-truth distribution, $H(P)$ is a constant that does not affect optimization. \textit{(L02 p10)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
-% 출처: L06 (Precision / Recall) — p4-5
-\part[3] Precision is defined as:
+% 출처: L06 (AUC-ROC) — p32 {\revised{[REVISED]}}
+\part[3] \revised{A model that classifies data items completely randomly has an AUC-ROC value of:}
 
 \begin{oneparchoices}
- \choice $\frac{\text{TP}}{\text{TP} + \text{FN}}$
- \choice $\frac{\text{TP}}{\text{TP} + \text{FP}}$
- \choice $\frac{\text{TP} + \text{TN}}{\text{Total}}$
- \choice $\frac{\text{TP}}{\text{Total}}$
+ \choice \revised{$0$}
+ \choice \revised{$0.5$}
+ \choice \revised{$0.75$}
+ \choice \revised{$1.0$}
 \end{oneparchoices}
 
-\answer{B. Precision = TP / (TP + FP). Option A is the definition of Recall. \textit{(L06 p4--5)} \textcolor{red}{[Easy]}}
+\answer{\revised{B. A random classifier has an AUC-ROC of 0.5. \textit{(L06 p32)} \textcolor{red}{[Easy]}}}
 \vspace{\stretch{1}}
 
 % 출처: L06 (Micro vs Macro averaging) — p42, p44
 \part[4] In multi-class evaluation, micro-averaging computes the metric by:
 
 \begin{oneparchoices}
- \choice computing the metric for each class, then averaging \\
- \choice aggregating all TP, FP, FN globally, then computing the metric \\
- \choice weighting each class by its frequency \\
- \choice using only the majority class \\
+ \choice \revised{computing the metric for each class, then averaging} \\
+ \choice \revised{aggregating results for all classes into a single confusion matrix, then computing the metric} \\
+ \choice \revised{weighting each class by its frequency} \\
+ \choice \revised{using only the majority class} \\
 \end{oneparchoices}
 
-\answer{B. Micro-averaging aggregates all TP, FP, FN across classes before computing the metric. Option A describes macro-averaging. \textit{(L06 p42, p44)} \textcolor{red}{[Medium]}}
+\answer{\revised{B. Micro-averaging aggregates results for all classes into a single confusion matrix, then computes the metric from the totals. Option A describes macro-averaging. \textit{(L06 p42, p44)} \textcolor{red}{[Medium]}}}
 \vspace{2em}
 
-% 출처: L07 (Receptive field) — p85-86
-\part[4] What is the receptive field size of three stacked $3 \times 3$ convolution layers? (stride = 1 for all layers)
+% 출처: L01 (Perceptron AND gate) — p25 {\revised{[REVISED]}}
+\part[4] \revised{A perceptron has weights $w_0 = -0.8$, $w_1 = 0.5$, $w_2 = 0.5$ and uses hard thresholding (output 1 if $z \geq 0$, else 0). What is the output for input $(x_1, x_2) = (1, 1)$?}
 
 \begin{oneparchoices}
- \choice $5 \times 5$
- \choice $7 \times 7$
- \choice $9 \times 9$
- \choice $11 \times 11$
+ \choice \revised{$0$}
+ \choice \revised{$0.2$}
+ \choice \revised{$0.5$}
+ \choice \revised{$1$}
 \end{oneparchoices}
 
-\answer{B. Each additional $3 \times 3$ layer adds 2 to the receptive field: $3 \rightarrow 5 \rightarrow 7$. (Formula: $(n-1) \times k + 1$ where $n$ = layers, but simpler: $3 + 2 + 2 = 7$). \textit{(L07 p85--86)} \textcolor{red}{[Medium]}}
+\answer{\revised{D. $z = -0.8 + 0.5(1) + 0.5(1) = 0.2 \geq 0$, so output $= 1$. This is the AND gate. \textit{(L01 p25)} \textcolor{red}{[Medium]}}}
 \vspace{2em}
 
-% 출처: L07 (VGGNet) — p85, p87-88
-\part[4] What is the main advantage of using three stacked $3 \times 3$ conv layers instead of a single $7 \times 7$ conv layer (with the same number of channels $C$)?
+% 출처: L07 (CNN Limitation) — p74 {\revised{[REVISED]}}
+\part[4] \revised{In which of the following cases is a CNN least effective?}
 
 \begin{oneparchoices}
- \choice Larger receptive field \\
- \choice Fewer parameters and more non-linearity \\
- \choice No padding is required \\
- \choice Faster inference speed \\
+ \choice \revised{When the input data has strong local spatial patterns} \\
+ \choice \revised{When the dataset contains high-resolution images} \\
+ \choice \revised{When there is no correlation between adjacent features in the input} \\
+ \choice \revised{When the number of output classes is large} \\
 \end{oneparchoices}
 
-\answer{B. Three $3 \times 3$ layers use $3 \times (9C^2) = 27C^2$ parameters vs.\ $49C^2$ for one $7 \times 7$ layer, and introduce 3 ReLU activations instead of 1. \textit{(L07 p85, p87--88)} \textcolor{red}{[Medium]}}
+\answer{\revised{C. CNNs utilize local spatial patterns. If there is no correlation between adjacent features, CNNs become ineffective. \textit{(L07 p74)} \textcolor{red}{[Medium]}}}
 \vspace{\stretch{1}}
 
 \end{parts}
