@@ -35,7 +35,7 @@ points, but a wrong answer will get -3 points. No answer will get
 \vspace{\stretch{1}}
 
 % 출처: L05 (Non-negative activation) — p7
-\part If all activation values in a hidden layer are non-negative, the gradients of the weights in the preceding layer can have both positive and negative signs independently.
+\part If all activation values in a hidden layer are non-negative, the gradients of the weights feeding into a single neuron in the next layer can have both positive and negative signs independently.
 \answer{False. When activations $x_i \geq 0$, $\partial \mathcal{L}/\partial w_i = (\partial \mathcal{L}/\partial y) \cdot x_i$, so all weight gradients share the same sign as $\partial \mathcal{L}/\partial y$, causing a zig-zag update path. \textit{(L05 p7)} \textcolor{red}{[Med-High]}}
 \vspace{\stretch{1}}
 
