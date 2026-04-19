@@ -24,9 +24,9 @@ points, but a wrong answer will get -3 points. No answer will get
 \answer{False. A multiply gate swaps and scales: $\partial(xy)/\partial x = y$ and $\partial(xy)/\partial y = x$. \textit{(L03 p28, p45--46)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
-% 출처: L04 (AdaGrad) — p21-23
+% 출처: L04 (RMSProp) — p23-24
 \part In RMSProp, the effective learning rate can only decrease during training.
-\answer{False. \textit{(L04 p21--23)} \textcolor{red}{[Medium]}}
+\answer{False. RMSProp uses an exponential moving average $v_t = \rho\,v_{t-1} + (1-\rho)\,g_t^2$, which can decrease when recent gradients are small, allowing the effective learning rate $\eta/\sqrt{v_t}$ to \textbf{increase}. This is unlike AdaGrad, where $v_t$ only grows. \textit{(L04 p23--24)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
 % 출처: L04 (Nesterov Momentum) — p15-16
