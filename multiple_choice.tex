@@ -6,17 +6,17 @@
 
 \begin{parts}
 
-% 출처: L01 (MLP, XOR) — p32-34, p36
-\part[3] What is the minimum number of layers (counting hidden and output layers only) required for a neural network to solve the XOR problem?
+% 출처: L01 (Linear Layer, Forward Prop) — p43-45
+\part[3] In a fully-connected (linear) layer where the input has dimension 5 and the output has dimension 3 (excluding bias), the weight matrix $W$ has the shape:
 
 \begin{oneparchoices}
- \choice 1
- \choice 2
- \choice 3
- \choice 4
+ \choice $5 \times 3$
+ \choice $3 \times 5$
+ \choice $5 \times 5$
+ \choice $3 \times 3$
 \end{oneparchoices}
 
-\answer{B. XOR requires at least 1 hidden layer + 1 output layer = 2 layers. \textit{(L01 p32--34, p36)} \textcolor{red}{[Easy]}}
+\answer{B. In a linear layer $\mathbf{y} = W\mathbf{x}$, $W \in \mathbb{R}^{3 \times 5}$ (output dim $\times$ input dim). \textit{(L01 p43--45)} \textcolor{red}{[Easy]}}
 \vspace{\stretch{1}}
 
 % 출처: L02 (Cross Entropy calculation) — p8-9
