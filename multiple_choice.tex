@@ -214,56 +214,56 @@
 \answer{B. $H(P,Q) = D_{KL}(P \| Q) + H(P)$. Since $P$ is the fixed ground-truth distribution, $H(P)$ is a constant that does not affect optimization. \textit{(L02 p10)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
-% 출처: L06 (AUC-ROC) — p32 {\revised{[REVISED]}}
-\part[3] \revised{A model that classifies data items completely randomly has an AUC-ROC value of:}
+% 출처: L06 (AUC-ROC) — p32
+\part[3] A model that classifies data items completely randomly has an AUC-ROC value of:
 
 \begin{oneparchoices}
- \choice \revised{$0$}
- \choice \revised{$0.5$}
- \choice \revised{$0.75$}
- \choice \revised{$1.0$}
+ \choice $0$
+ \choice $0.5$
+ \choice $0.75$
+ \choice $1.0$
 \end{oneparchoices}
 
-\answer{\revised{B. A random classifier has an AUC-ROC of 0.5. \textit{(L06 p32)} \textcolor{red}{[Easy]}}}
+\answer{B. A random classifier has an AUC-ROC of 0.5. \textit{(L06 p32)} \textcolor{red}{[Easy]}}
 \vspace{\stretch{1}}
 
 % 출처: L06 (Micro vs Macro averaging) — p42, p44
 \part[4] In multi-class evaluation, micro-averaging computes the metric by:
 
 \begin{oneparchoices}
- \choice \revised{computing the metric for each class, then averaging} \\
- \choice \revised{aggregating results for all classes into a single confusion matrix, then computing the metric} \\
- \choice \revised{weighting each class by its frequency} \\
- \choice \revised{using only the majority class} \\
+ \choice computing the metric for each class, then averaging \\
+ \choice aggregating results for all classes into a single confusion matrix, then computing the metric \\
+ \choice weighting each class by its frequency \\
+ \choice using only the majority class \\
 \end{oneparchoices}
 
-\answer{\revised{B. Micro-averaging aggregates results for all classes into a single confusion matrix, then computes the metric from the totals. Option A describes macro-averaging. \textit{(L06 p42, p44)} \textcolor{red}{[Medium]}}}
+\answer{B. Micro-averaging aggregates results for all classes into a single confusion matrix, then computes the metric from the totals. Option A describes macro-averaging. \textit{(L06 p42, p44)} \textcolor{red}{[Medium]}}
 \vspace{2em}
 
-% 출처: L01 (Perceptron AND gate) — p25 {\revised{[REVISED]}}
-\part[4] \revised{A perceptron has weights $w_0 = -0.8$, $w_1 = 0.5$, $w_2 = 0.5$ and uses hard thresholding (output 1 if $z \geq 0$, else 0). What is the output for input $(x_1, x_2) = (1, 1)$?}
+% 출처: L01 (Perceptron AND gate) — p25
+\part[4] A perceptron has weights $w_0 = -0.8$, $w_1 = 0.5$, $w_2 = 0.5$ and uses hard thresholding (output 1 if $z \geq 0$, else 0). What is the output for input $(x_1, x_2) = (1, 1)$?
 
 \begin{oneparchoices}
- \choice \revised{$0$}
- \choice \revised{$0.2$}
- \choice \revised{$0.5$}
- \choice \revised{$1$}
+ \choice $0$
+ \choice $0.2$
+ \choice $0.5$
+ \choice $1$
 \end{oneparchoices}
 
-\answer{\revised{D. $z = -0.8 + 0.5(1) + 0.5(1) = 0.2 \geq 0$, so output $= 1$. This is the AND gate. \textit{(L01 p25)} \textcolor{red}{[Medium]}}}
+\answer{D. $z = -0.8 + 0.5(1) + 0.5(1) = 0.2 \geq 0$, so output $= 1$. This is the AND gate. \textit{(L01 p25)} \textcolor{red}{[Medium]}}
 \vspace{2em}
 
-% 출처: L07 (CNN Limitation) — p74 {\revised{[REVISED]}}
-\part[4] \revised{In which of the following cases is a CNN least effective?}
+% 출처: L07 (CNN Limitation) — p74
+\part[4] In which of the following cases is a CNN least effective?
 
 \begin{oneparchoices}
- \choice \revised{When the input data has strong local spatial patterns} \\
- \choice \revised{When the dataset contains high-resolution images} \\
- \choice \revised{When there is no correlation between adjacent features in the input} \\
- \choice \revised{When the number of output classes is large} \\
+ \choice When the input data has strong local spatial patterns \\
+ \choice When the dataset contains high-resolution images \\
+ \choice When there is no correlation between adjacent features in the input \\
+ \choice When the number of output classes is large \\
 \end{oneparchoices}
 
-\answer{\revised{C. CNNs utilize local spatial patterns. If there is no correlation between adjacent features, CNNs become ineffective. \textit{(L07 p74)} \textcolor{red}{[Medium]}}}
+\answer{C. CNNs utilize local spatial patterns. If there is no correlation between adjacent features, CNNs become ineffective. \textit{(L07 p74)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
 \end{parts}
