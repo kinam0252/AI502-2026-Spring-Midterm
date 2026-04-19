@@ -16,7 +16,7 @@
  \choice 4
 \end{oneparchoices}
 
-\answer{B. XOR requires at least 1 hidden layer + 1 output layer = 2 layers. \textit{(L01 p32--34, p36)}}
+\answer{B. XOR requires at least 1 hidden layer + 1 output layer = 2 layers. \textit{(L01 p32--34, p36)} \textcolor{red}{[Easy]}}
 \vspace{\stretch{1}}
 
 % 출처: L02 (Cross Entropy calculation) — p8-9
@@ -29,7 +29,7 @@
  \choice $-\sum_{c=1}^{4} \log(p_c)$
 \end{oneparchoices}
 
-\answer{B. With one-hot ground truth, CE loss $= -\log(\hat{p}_{y_i})$. Since class 3 has $\hat{p}_3 = 0.3$, the loss is $-\log(0.3)$. \textit{(L02 p8--9)}}
+\answer{B. With one-hot ground truth, CE loss $= -\log(\hat{p}_{y_i})$. Since class 3 has $\hat{p}_3 = 0.3$, the loss is $-\log(0.3)$. \textit{(L02 p8--9)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
 % 출처: L03 (Softmax + CE gradient) — p72-73
@@ -42,7 +42,7 @@
  \choice $[0.2,\; 0.5,\; 0.3]$
 \end{oneparchoices}
 
-\answer{A. $\partial \mathcal{L} / \partial \mathbf{s} = \mathbf{p} - \mathbf{y} = [0.2,\; 0.5,\; 0.3] - [0,\; 1,\; 0] = [0.2,\; -0.5,\; 0.3]$. \textit{(L03 p72--73)}}
+\answer{A. $\partial \mathcal{L} / \partial \mathbf{s} = \mathbf{p} - \mathbf{y} = [0.2,\; 0.5,\; 0.3] - [0,\; 1,\; 0] = [0.2,\; -0.5,\; 0.3]$. \textit{(L03 p72--73)} \textcolor{red}{[Hard]}}
 \vspace{\stretch{1}}
 
 % 출처: L03 (Max gate) — p28
@@ -55,7 +55,7 @@
  \choice neither input
 \end{oneparchoices}
 
-\answer{B. The max gate passes the gradient only to the input that was selected (the larger one) and assigns zero gradient to the other input. \textit{(L03 p28)}}
+\answer{B. The max gate passes the gradient only to the input that was selected (the larger one) and assigns zero gradient to the other input. \textit{(L03 p28)} \textcolor{red}{[Easy]}}
 \vspace{\stretch{1}}
 
 % 출처: L04 (Optimizer identification) — p23-24
@@ -68,7 +68,7 @@
  \choice Nesterov Momentum
 \end{oneparchoices}
 
-\answer{C. RMSProp uses $v_t = \rho \, v_{t-1} + (1-\rho) \, g_t^2$ (exponential moving average). AdaGrad uses a cumulative sum, not a moving average. Momentum and Nesterov do not adapt per-parameter learning rates. \textit{(L04 p23--24)}}
+\answer{C. RMSProp uses $v_t = \rho \, v_{t-1} + (1-\rho) \, g_t^2$ (exponential moving average). AdaGrad uses a cumulative sum, not a moving average. Momentum and Nesterov do not adapt per-parameter learning rates. \textit{(L04 p23--24)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
 % 출처: L04 (Mini-batch SGD) — p4-5
@@ -81,7 +81,7 @@
  \choice It eliminates the need for a learning rate. \\
 \end{oneparchoices}
 
-\answer{B. Mini-batch SGD approximates the gradient using a subset, making each update much faster than computing the gradient over the entire dataset. \textit{(L04 p4--5)}}
+\answer{B. Mini-batch SGD approximates the gradient using a subset, making each update much faster than computing the gradient over the entire dataset. \textit{(L04 p4--5)} \textcolor{red}{[Easy]}}
 \vspace{\stretch{1}}
 
 % 출처: L05 (Dead neuron) — p2, p9
@@ -94,7 +94,7 @@
  \choice Softmax
 \end{oneparchoices}
 
-\answer{C. ReLU outputs 0 for all negative inputs and its gradient is 0 in that region, so a neuron can become permanently dead. Sigmoid and Tanh have vanishing but never exactly zero gradients. \textit{(L05 p2, p9)}}
+\answer{C. ReLU outputs 0 for all negative inputs and its gradient is 0 in that region, so a neuron can become permanently dead. Sigmoid and Tanh have vanishing but never exactly zero gradients. \textit{(L05 p2, p9)} \textcolor{red}{[Easy]}}
 \vspace{\stretch{1}}
 
 % 출처: L06 (F1 score calculation) — p4-5, p12
@@ -107,7 +107,7 @@
  \choice 0.90
 \end{oneparchoices}
 
-\answer{B. Precision $= 40/50 = 0.8$, Recall $= 40/50 = 0.8$, $F_1 = 2 \times 0.8 \times 0.8 / (0.8 + 0.8) = 0.80$. \textit{(L06 p4--5, p12)}}
+\answer{B. Precision $= 40/50 = 0.8$, Recall $= 40/50 = 0.8$, $F_1 = 2 \times 0.8 \times 0.8 / (0.8 + 0.8) = 0.80$. \textit{(L06 p4--5, p12)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
 % 출처: L07 (Convolution output size) — p54-55
@@ -120,7 +120,7 @@
  \choice $28 \times 28 \times 5$
 \end{oneparchoices}
 
-\answer{B. Output spatial size $= (32 - 5)/1 + 1 = 28$. Output depth $=$ number of filters $= 16$. So $28 \times 28 \times 16$. \textit{(L07 p54--55)}}
+\answer{B. Output spatial size $= (32 - 5)/1 + 1 = 28$. Output depth $=$ number of filters $= 16$. So $28 \times 28 \times 16$. \textit{(L07 p54--55)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
 % 출처: L07 (Same padding) — p55
@@ -133,7 +133,7 @@
  \choice 3
 \end{oneparchoices}
 
-\answer{B. Same padding: $p = (k-1)/2 = (3-1)/2 = 1$. \textit{(L07 p55)}}
+\answer{B. Same padding: $p = (k-1)/2 = (3-1)/2 = 1$. \textit{(L07 p55)} \textcolor{red}{[Easy]}}
 \vspace{\stretch{1}}
 
 % 출처: L04 (Adam bias correction) — p26-28
@@ -146,7 +146,7 @@
  \choice To normalize the gradient magnitude to unit length \\
 \end{oneparchoices}
 
-\answer{B. When $t$ is small, the sum of moving average weights $(1-\beta^t)$ is less than 1. Bias correction divides by $(1-\beta^t)$ to compensate. \textit{(L04 p26--28)}}
+\answer{B. When $t$ is small, the sum of moving average weights $(1-\beta^t)$ is less than 1. Bias correction divides by $(1-\beta^t)$ to compensate. \textit{(L04 p26--28)} \textcolor{red}{[Med-High]}}
 \vspace{\stretch{1}}
 
 % 출처: L03 (Linear layer backprop dL/dW) — p66-67
@@ -159,7 +159,7 @@
  \choice $\frac{d\mathcal{L}}{d\mathbf{y}} \cdot W$
 \end{oneparchoices}
 
-\answer{B. $\frac{d\mathcal{L}}{dW} = \frac{d\mathcal{L}}{d\mathbf{y}} \cdot \mathbf{x}^\top$. Note: option A is $\frac{d\mathcal{L}}{d\mathbf{x}}$, not $\frac{d\mathcal{L}}{dW}$. \textit{(L03 p66--67)}}
+\answer{B. $\frac{d\mathcal{L}}{dW} = \frac{d\mathcal{L}}{d\mathbf{y}} \cdot \mathbf{x}^\top$. Note: option A is $\frac{d\mathcal{L}}{d\mathbf{x}}$, not $\frac{d\mathcal{L}}{dW}$. \textit{(L03 p66--67)} \textcolor{red}{[Med-High]}}
 \vspace{\stretch{1}}
 
 % 출처: L03 (Add gate) — p28
@@ -172,7 +172,7 @@
  \choice None of the above
 \end{oneparchoices}
 
-\answer{A. An add gate distributes the upstream gradient equally to both inputs ($\partial(x+y)/\partial x = 1$). \textit{(L03 p28)}}
+\answer{A. An add gate distributes the upstream gradient equally to both inputs ($\partial(x+y)/\partial x = 1$). \textit{(L03 p28)} \textcolor{red}{[Easy]}}
 \vspace{\stretch{1}}
 
 % 출처: L04 (Adam) — p25, p28-29
@@ -185,7 +185,7 @@
  \choice None of the above. \\
 \end{oneparchoices}
 
-\answer{B. Adam combines \textbf{RMSProp} (not AdaGrad) and Momentum, with bias correction. \textit{(L04 p25, p28--29)}}
+\answer{B. Adam combines \textbf{RMSProp} (not AdaGrad) and Momentum, with bias correction. \textit{(L04 p25, p28--29)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
 % 출처: L05 (Dropout) — p25-26
@@ -198,7 +198,7 @@
  \choice removes the dropout layers entirely from the network \\
 \end{oneparchoices}
 
-\answer{B. With inverted dropout, weights are already scaled during training ($/ p$), so at test time all neurons are used without modification. \textit{(L05 p25--26)}}
+\answer{B. With inverted dropout, weights are already scaled during training ($/ p$), so at test time all neurons are used without modification. \textit{(L05 p25--26)} \textcolor{red}{[Easy]}}
 \vspace{\stretch{1}}
 
 % 출처: L07 (ResNet bottleneck) — p101
@@ -211,7 +211,7 @@
  \choice To apply batch normalization \\
 \end{oneparchoices}
 
-\answer{B. In a bottleneck block, $1 \times 1$ conv reduces channels (e.g., $256 \to 64$) before the expensive $3 \times 3$ conv, then restores them ($64 \to 256$). \textit{(L07 p101)}}
+\answer{B. In a bottleneck block, $1 \times 1$ conv reduces channels (e.g., $256 \to 64$) before the expensive $3 \times 3$ conv, then restores them ($64 \to 256$). \textit{(L07 p101)} \textcolor{red}{[Med-High]}}
 \vspace{\stretch{1}}
 
 % 출처: L06 (Precision / Recall) — p4-5
@@ -224,7 +224,7 @@
  \choice $\frac{\text{TP}}{\text{Total}}$
 \end{oneparchoices}
 
-\answer{B. Precision = TP / (TP + FP). Option A is the definition of Recall. \textit{(L06 p4--5)}}
+\answer{B. Precision = TP / (TP + FP). Option A is the definition of Recall. \textit{(L06 p4--5)} \textcolor{red}{[Easy]}}
 \vspace{\stretch{1}}
 
 % 출처: L06 (Micro vs Macro averaging) — p42, p44
@@ -237,7 +237,7 @@
  \choice using only the majority class \\
 \end{oneparchoices}
 
-\answer{B. Micro-averaging aggregates all TP, FP, FN across classes before computing the metric. Option A describes macro-averaging. \textit{(L06 p42, p44)}}
+\answer{B. Micro-averaging aggregates all TP, FP, FN across classes before computing the metric. Option A describes macro-averaging. \textit{(L06 p42, p44)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
 % 출처: L07 (Receptive field) — p85-86
@@ -250,7 +250,7 @@
  \choice $11 \times 11$
 \end{oneparchoices}
 
-\answer{B. Each additional $3 \times 3$ layer adds 2 to the receptive field: $3 \rightarrow 5 \rightarrow 7$. (Formula: $(n-1) \times k + 1$ where $n$ = layers, but simpler: $3 + 2 + 2 = 7$). \textit{(L07 p85--86)}}
+\answer{B. Each additional $3 \times 3$ layer adds 2 to the receptive field: $3 \rightarrow 5 \rightarrow 7$. (Formula: $(n-1) \times k + 1$ where $n$ = layers, but simpler: $3 + 2 + 2 = 7$). \textit{(L07 p85--86)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
 % 출처: L07 (VGGNet) — p85, p87-88
@@ -263,7 +263,7 @@
  \choice Faster inference speed \\
 \end{oneparchoices}
 
-\answer{B. Three $3 \times 3$ layers use $3 \times (9C^2) = 27C^2$ parameters vs.\ $49C^2$ for one $7 \times 7$ layer, and introduce 3 ReLU activations instead of 1. \textit{(L07 p85, p87--88)}}
+\answer{B. Three $3 \times 3$ layers use $3 \times (9C^2) = 27C^2$ parameters vs.\ $49C^2$ for one $7 \times 7$ layer, and introduce 3 ReLU activations instead of 1. \textit{(L07 p85, p87--88)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
 \end{parts}

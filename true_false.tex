@@ -11,52 +11,52 @@ points, but a wrong answer will get -3 points. No answer will get
 
 % 출처: L01 (Perceptron, XOR) — p31-32, p38
 \part A single-layer perceptron can represent the XOR function.
-\answer{False. XOR is not linearly separable. A multi-layer perceptron is required. \textit{(L01 p31--32, p38)}}
+\answer{False. XOR is not linearly separable. A multi-layer perceptron is required. \textit{(L01 p31--32, p38)} \textcolor{red}{[Easy]}}
 \vspace{\stretch{1}}
 
 % 출처: L05 (Sigmoid derivative) — p4
 \part The maximum value of the sigmoid derivative $\sigma'(x) = \sigma(x)(1-\sigma(x))$ is $0.5$.
-\answer{False. The maximum occurs at $x=0$: $\sigma(0)=0.5$, so $\sigma'(0) = 0.5 \times 0.5 = \mathbf{0.25}$. \textit{(L05 p4)}}
+\answer{False. The maximum occurs at $x=0$: $\sigma(0)=0.5$, so $\sigma'(0) = 0.5 \times 0.5 = \mathbf{0.25}$. \textit{(L05 p4)} \textcolor{red}{[Med-High]}}
 \vspace{\stretch{1}}
 
 % 출처: L03 (Multiply gate, gradient flow) — p28, p45-46
 \part In a computational graph, a multiply gate distributes the upstream gradient equally to both of its inputs.
-\answer{False. A multiply gate swaps and scales: $\partial(xy)/\partial x = y$ and $\partial(xy)/\partial y = x$. \textit{(L03 p28, p45--46)}}
+\answer{False. A multiply gate swaps and scales: $\partial(xy)/\partial x = y$ and $\partial(xy)/\partial y = x$. \textit{(L03 p28, p45--46)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
 % 출처: L04 (AdaGrad) — p21-23
 \part In AdaGrad, the effective learning rate can only decrease during training.
-\answer{True. The accumulated sum of squared gradients $v_t$ monotonically increases, so the effective learning rate $\eta / \sqrt{v_t}$ can only decrease. \textit{(L04 p21--23)}}
+\answer{True. The accumulated sum of squared gradients $v_t$ monotonically increases, so the effective learning rate $\eta / \sqrt{v_t}$ can only decrease. \textit{(L04 p21--23)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
 % 출처: L04 (Nesterov Momentum) — p15-16
 \part Nesterov momentum computes the gradient at the current position before applying the momentum term.
-\answer{False. Nesterov momentum first moves in the momentum direction (``look ahead''), \textbf{then} computes the gradient at that lookahead position. \textit{(L04 p15--16)}}
+\answer{False. Nesterov momentum first moves in the momentum direction (``look ahead''), \textbf{then} computes the gradient at that lookahead position. \textit{(L04 p15--16)} \textcolor{red}{[Med-High]}}
 \vspace{\stretch{1}}
 
 % 출처: L05 (Non-negative activation) — p7
 \part If all activation values in a hidden layer are non-negative, the gradients of the weights in the preceding layer can have both positive and negative signs independently.
-\answer{False. When activations $x_i \geq 0$, $\partial \mathcal{L}/\partial w_i = (\partial \mathcal{L}/\partial y) \cdot x_i$, so all weight gradients share the same sign as $\partial \mathcal{L}/\partial y$, causing a zig-zag update path. \textit{(L05 p7)}}
+\answer{False. When activations $x_i \geq 0$, $\partial \mathcal{L}/\partial w_i = (\partial \mathcal{L}/\partial y) \cdot x_i$, so all weight gradients share the same sign as $\partial \mathcal{L}/\partial y$, causing a zig-zag update path. \textit{(L05 p7)} \textcolor{red}{[Med-High]}}
 \vspace{\stretch{1}}
 
 % 출처: L05 (Batch Normalization) — p16-17
 \part Batch normalization includes learnable parameters $\gamma$ (scale) and $\beta$ (shift).
-\answer{True. After normalizing, BN applies an affine transformation $y = \gamma \hat{x} + \beta$ with learnable $\gamma$ and $\beta$. \textit{(L05 p16--17)}}
+\answer{True. After normalizing, BN applies an affine transformation $y = \gamma \hat{x} + \beta$ with learnable $\gamma$ and $\beta$. \textit{(L05 p16--17)} \textcolor{red}{[Easy]}}
 \vspace{\stretch{1}}
 
 % 출처: L06 (F1 score) — p12
 \part The F1 score is the arithmetic mean of precision and recall.
-\answer{False. The F1 score is the \textbf{harmonic} mean of precision and recall: $F_1 = \frac{2 \cdot P \cdot R}{P + R}$. \textit{(L06 p12)}}
+\answer{False. The F1 score is the \textbf{harmonic} mean of precision and recall: $F_1 = \frac{2 \cdot P \cdot R}{P + R}$. \textit{(L06 p12)} \textcolor{red}{[Easy]}}
 \vspace{\stretch{1}}
 
 % 출처: L07 (Convolution, weight sharing) — p32-35
 \part In a standard convolution layer, each filter operates on only a single input channel.
-\answer{False. Each filter spans \textbf{all} input channels. A filter applied to an input with $C$ channels has size $k \times k \times C$. \textit{(L07 p32--35)}}
+\answer{False. Each filter spans \textbf{all} input channels. A filter applied to an input with $C$ channels has size $k \times k \times C$. \textit{(L07 p32--35)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
 % 출처: L07 (ResNet) — p99
 \part In ResNet, a skip (shortcut) connection adds the input of a residual block directly to its output.
-\answer{True. The output is $F(\mathbf{x}) + \mathbf{x}$, where $F(\mathbf{x})$ is the residual mapping learned by the block. \textit{(L07 p99)}}
+\answer{True. The output is $F(\mathbf{x}) + \mathbf{x}$, where $F(\mathbf{x})$ is the residual mapping learned by the block. \textit{(L07 p99)} \textcolor{red}{[Easy]}}
 \vspace{\stretch{1}}
 
 \end{parts}
