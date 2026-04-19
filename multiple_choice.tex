@@ -136,30 +136,30 @@
 \answer{B. Same padding: $p = (k-1)/2 = (3-1)/2 = 1$. \textit{(L07 p55)}}
 \vspace{\stretch{1}}
 
-% 출처: L01 (Forward propagation) — p39-44, p46
-\part[3] In a feedforward neural network, the forward propagation computes the output by \rule{1cm}{0.15mm}.
+% 출처: L04 (Adam bias correction) — p26-28
+\part[3] In the Adam optimizer, why is bias correction applied to the moving average estimates?
 
 \begin{oneparchoices}
- \choice propagating signals from the output layer to the input layer \\
- \choice propagating signals from the input layer to the output layer \\
- \choice updating the weights using the chain rule \\
- \choice computing the gradient of the loss function \\
+ \choice To prevent division by zero in the denominator \\
+ \choice To ensure the sum of weights in the moving average equals 1 \\
+ \choice To gradually increase the learning rate over time \\
+ \choice To normalize the gradient magnitude to unit length \\
 \end{oneparchoices}
 
-\answer{B. Forward propagation computes the output by passing signals layer-by-layer from the input to the output. \textit{(L01 p39--44, p46)}}
+\answer{B. When $t$ is small, the sum of moving average weights $(1-\beta^t)$ is less than 1. Bias correction divides by $(1-\beta^t)$ to compensate. \textit{(L04 p26--28)}}
 \vspace{\stretch{1}}
 
-% 출처: L02 (Softmax) — p6
-\part[3] Given logits $[2.0,\; 1.0,\; 0.1]$, which class will have the \textbf{highest} softmax probability?
+% 출처: L03 (Linear layer backprop dL/dW) — p66-67
+\part[3] For a linear layer $\mathbf{y} = W\mathbf{x}$, the gradient of the loss with respect to the weight matrix $W$ is:
 
 \begin{oneparchoices}
- \choice Class 1
- \choice Class 2
- \choice Class 3
- \choice All classes have equal probability
+ \choice $W^\top \frac{d\mathcal{L}}{d\mathbf{y}}$
+ \choice $\frac{d\mathcal{L}}{d\mathbf{y}} \cdot \mathbf{x}^\top$
+ \choice $\mathbf{x} \cdot \left(\frac{d\mathcal{L}}{d\mathbf{y}}\right)^\top$
+ \choice $\frac{d\mathcal{L}}{d\mathbf{y}} \cdot W$
 \end{oneparchoices}
 
-\answer{A. Softmax is a monotonic function—the largest logit always receives the highest probability. \textit{(L02 p6)}}
+\answer{B. $\frac{d\mathcal{L}}{dW} = \frac{d\mathcal{L}}{d\mathbf{y}} \cdot \mathbf{x}^\top$. Note: option A is $\frac{d\mathcal{L}}{d\mathbf{x}}$, not $\frac{d\mathcal{L}}{dW}$. \textit{(L03 p66--67)}}
 \vspace{\stretch{1}}
 
 % 출처: L03 (Add gate) — p28
@@ -201,17 +201,17 @@
 \answer{B. With inverted dropout, weights are already scaled during training ($/ p$), so at test time all neurons are used without modification. \textit{(L05 p25--26)}}
 \vspace{\stretch{1}}
 
-% 출처: L05 (Sigmoid) — p3
-\part[3] The output range of the sigmoid function $\sigma(x) = \frac{1}{1+e^{-x}}$ is:
+% 출처: L07 (ResNet bottleneck) — p101
+\part[3] What is the primary role of $1 \times 1$ convolutions in a ResNet bottleneck block?
 
 \begin{oneparchoices}
- \choice $[-1, 1]$
- \choice $[0, 1]$
- \choice $(-\infty, \infty)$
- \choice $[0, \infty)$
+ \choice To increase the spatial resolution of feature maps \\
+ \choice To reduce and restore the channel dimension around the $3 \times 3$ conv \\
+ \choice To replace the skip connection \\
+ \choice To apply batch normalization \\
 \end{oneparchoices}
 
-\answer{B. The sigmoid function outputs values strictly between 0 and 1: $(0, 1)$. \textit{(L05 p3)}}
+\answer{B. In a bottleneck block, $1 \times 1$ conv reduces channels (e.g., $256 \to 64$) before the expensive $3 \times 3$ conv, then restores them ($64 \to 256$). \textit{(L07 p101)}}
 \vspace{\stretch{1}}
 
 % 출처: L06 (Precision / Recall) — p4-5

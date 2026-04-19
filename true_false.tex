@@ -14,9 +14,9 @@ points, but a wrong answer will get -3 points. No answer will get
 \answer{False. XOR is not linearly separable. A multi-layer perceptron is required. \textit{(L01 p31--32, p38)}}
 \vspace{\stretch{1}}
 
-% 출처: L02 (Softmax) — p5-6
-\part The output values of the softmax function always sum to 1.
-\answer{True. \textit{(L02 p5--6)}}
+% 출처: L05 (Sigmoid derivative) — p4
+\part The maximum value of the sigmoid derivative $\sigma'(x) = \sigma(x)(1-\sigma(x))$ is $0.5$.
+\answer{False. The maximum occurs at $x=0$: $\sigma(0)=0.5$, so $\sigma'(0) = 0.5 \times 0.5 = \mathbf{0.25}$. \textit{(L05 p4)}}
 \vspace{\stretch{1}}
 
 % 출처: L03 (Multiply gate, gradient flow) — p28, p45-46
@@ -29,14 +29,14 @@ points, but a wrong answer will get -3 points. No answer will get
 \answer{True. The accumulated sum of squared gradients $v_t$ monotonically increases, so the effective learning rate $\eta / \sqrt{v_t}$ can only decrease. \textit{(L04 p21--23)}}
 \vspace{\stretch{1}}
 
-% 출처: L05 (Tanh) — p5
-\part The output range of the tanh activation function is $[0, 1]$.
-\answer{False. The output range of tanh is $[-1, 1]$. \textit{(L05 p5)}}
+% 출처: L04 (Nesterov Momentum) — p15-16
+\part Nesterov momentum computes the gradient at the current position before applying the momentum term.
+\answer{False. Nesterov momentum first moves in the momentum direction (``look ahead''), \textbf{then} computes the gradient at that lookahead position. \textit{(L04 p15--16)}}
 \vspace{\stretch{1}}
 
-% 출처: L05 (ReLU) — p6
-\part The ReLU activation function outputs 0 for all negative input values.
-\answer{True. $\text{ReLU}(x) = \max(0, x)$, which outputs 0 when $x < 0$. \textit{(L05 p6)}}
+% 출처: L05 (Non-negative activation) — p7
+\part If all activation values in a hidden layer are non-negative, the gradients of the weights in the preceding layer can have both positive and negative signs independently.
+\answer{False. When activations $x_i \geq 0$, $\partial \mathcal{L}/\partial w_i = (\partial \mathcal{L}/\partial y) \cdot x_i$, so all weight gradients share the same sign as $\partial \mathcal{L}/\partial y$, causing a zig-zag update path. \textit{(L05 p7)}}
 \vspace{\stretch{1}}
 
 % 출처: L05 (Batch Normalization) — p16-17
