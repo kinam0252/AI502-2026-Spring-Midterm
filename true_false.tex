@@ -25,8 +25,8 @@ points, but a wrong answer will get -3 points. No answer will get
 \vspace{\stretch{1}}
 
 % 출처: L04 (AdaGrad) — p21-23
-\part In AdaGrad, the effective learning rate can only decrease during training.
-\answer{True. The accumulated sum of squared gradients $v_t$ monotonically increases, so the effective learning rate $\eta / \sqrt{v_t}$ can only decrease. \textit{(L04 p21--23)} \textcolor{red}{[Medium]}}
+\part In RMSProp, the effective learning rate can only decrease during training.
+\answer{False. \textit{(L04 p21--23)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
 % 출처: L04 (Nesterov Momentum) — p15-16
@@ -35,7 +35,7 @@ points, but a wrong answer will get -3 points. No answer will get
 \vspace{\stretch{1}}
 
 % 출처: L05 (Non-negative activation) — p7
-\part If all activation values in a hidden layer are non-negative, the gradients of the weights feeding into a single neuron in the next layer can have both positive and negative signs independently.
+\part If all activation values in a hidden layer are non-negative, the gradients of the weights feeding into a single neuron in the next layer can have mixed signs, e.g., both positive and negative signs.
 \answer{False. When activations $x_i \geq 0$, $\partial \mathcal{L}/\partial w_i = (\partial \mathcal{L}/\partial y) \cdot x_i$, so all weight gradients share the same sign as $\partial \mathcal{L}/\partial y$, causing a zig-zag update path. \textit{(L05 p7)} \textcolor{red}{[Med-High]}}
 \vspace{\stretch{1}}
 
@@ -50,7 +50,7 @@ points, but a wrong answer will get -3 points. No answer will get
 \vspace{\stretch{1}}
 
 % 출처: L07 (Convolution, weight sharing) — p32-35
-\part In a standard convolution layer, each filter operates on only a single input channel.
+\part In a standard convolution layer, each filter operates only on a single input channel.
 \answer{False. Each filter spans \textbf{all} input channels. A filter applied to an input with $C$ channels has size $k \times k \times C$. \textit{(L07 p32--35)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
