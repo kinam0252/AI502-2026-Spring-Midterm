@@ -6,17 +6,17 @@
 
 \begin{parts}
 
-% 출처: L01 (Linear Layer, Forward Prop) — p43-45
-\part[3] In a fully-connected (linear) layer where the input has dimension 5 and the output has dimension 3 (excluding bias), the weight matrix $W$ has the shape:
+% 출처: L02 (MSE problems) — p3
+\part[3] When using Mean Squared Error (MSE) loss with a sigmoid output for classification, what is the main problem?
 
 \begin{oneparchoices}
- \choice $5 \times 3$
- \choice $3 \times 5$
- \choice $5 \times 5$
- \choice $3 \times 3$
+ \choice The loss function is not differentiable. \\
+ \choice The loss and gradient magnitudes are upper-bounded, making training slow. \\
+ \choice MSE cannot handle multi-class problems. \\
+ \choice The loss becomes negative for incorrect predictions. \\
 \end{oneparchoices}
 
-\answer{B. In a linear layer $\mathbf{y} = W\mathbf{x}$, $W \in \mathbb{R}^{3 \times 5}$ (output dim $\times$ input dim). \textit{(L01 p43--45)} \textcolor{red}{[Easy]}}
+\answer{B. Since sigmoid outputs are in $(0,1)$ and targets are in $\{0,1\}$, MSE loss $< 1$ and $|\partial\mathcal{L}/\partial \hat{y}| < 2$, resulting in slow training. \textit{(L02 p3)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
 % 출처: L02 (Cross Entropy calculation) — p8-9
