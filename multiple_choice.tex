@@ -201,17 +201,17 @@
 \answer{B. With inverted dropout, weights are already scaled during training ($/ p$), so at test time all neurons are used without modification. \textit{(L05 p25--26)} \textcolor{red}{[Easy]}}
 \vspace{\stretch{1}}
 
-% 출처: L07 (ResNet bottleneck) — p101
-\part[3] What is the primary role of $1 \times 1$ convolutions in a ResNet bottleneck block?
+% 출처: L02 (KL Divergence vs Cross Entropy) — p10
+\part[3] Minimizing the cross-entropy loss $H(P, Q)$ is equivalent to minimizing the KL divergence $D_{KL}(P \| Q)$ because:
 
 \begin{oneparchoices}
- \choice To increase the spatial resolution of feature maps \\
- \choice To reduce and restore the channel dimension around the $3 \times 3$ conv \\
- \choice To replace the skip connection \\
- \choice To apply batch normalization \\
+ \choice They are the same function. \\
+ \choice They differ only by the entropy $H(P)$, which is constant w.r.t.\ model parameters. \\
+ \choice KL divergence is always zero for one-hot distributions. \\
+ \choice Cross-entropy ignores the ground-truth distribution $P$. \\
 \end{oneparchoices}
 
-\answer{B. In a bottleneck block, $1 \times 1$ conv reduces channels (e.g., $256 \to 64$) before the expensive $3 \times 3$ conv, then restores them ($64 \to 256$). \textit{(L07 p101)} \textcolor{red}{[Med-High]}}
+\answer{B. $H(P,Q) = D_{KL}(P \| Q) + H(P)$. Since $P$ is the fixed ground-truth distribution, $H(P)$ is a constant that does not affect optimization. \textit{(L02 p10)} \textcolor{red}{[Medium]}}
 \vspace{\stretch{1}}
 
 % 출처: L06 (Precision / Recall) — p4-5
